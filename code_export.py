@@ -6,7 +6,7 @@ from pathlib import Path
 # Pamiętaj, aby wpisywać je z kropką i małymi literami.
 WHITELIST = {
     '.java', '.py', '.cpp', '.c', '.h', '.hpp', '.cs', '.js', '.ts', 
-    '.html', '.css', '.rs', '.go', '.php', '.rb', '.kt', '.swift', '.sh'
+    '.html', '.css', '.rs', '.go', '.php', '.rb', '.kt', '.xml', '.swift', '.sh'
 }
 # ===============================================================
 
