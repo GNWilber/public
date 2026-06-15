@@ -42,7 +42,7 @@ HRESULT GetDesktopFolderView(IFolderView** ppFV) {
     if (FAILED(hr)) return hr;
 
     IShellView* pSV = NULL;
-    hr = pSB->QueryActiveViewModel(&pSV);
+    hr = pSB->QueryActiveShellView(&pSV);
     pSB->Release();
     if (FAILED(hr)) return hr;
 
@@ -70,9 +70,9 @@ int main() {
     IFolderView2* pFV2 = NULL;
     if (SUCCEEDED(pFV->QueryInterface(IID_PPV_ARGS(&pFV2)))) {
         DWORD dwFlags = 0;
-        if (SUCCEEDED(pFV2->GetFolderFlags(&dwFlags)) && (dwFlags & FWF_AUTOARRANGE)) {
+        if (SUCCEEDED(pFV2->GetCurrentFolderFlags(&dwFlags)) && (dwFlags & FWF_AUTOARRANGE)) {
             std::wcout << L"Disabling Desktop Auto-Arrange to apply custom layout..." << std::endl;
-            pFV2->SetFolderFlags(FWF_AUTOARRANGE, 0);
+            pFV2->SetCurrentFolderFlags(FWF_AUTOARRANGE, 0);
         }
         pFV2->Release();
     }
@@ -164,16 +164,25 @@ int main() {
     // Get current Windows Grid metrics for icon placement layout
     int iconSpacingX = GetSystemMetrics(SM_CXICONSPACING);
     int iconSpacingY = GetSystemMetrics(SM_CYICONSPACING);
-    if (iconSpacingX <= 0) iconSpacingX = 100; // Fallbacks
+    if (iconSpacingX <= 0) iconSpacingX = 100;
     if (iconSpacingY <= 0) iconSpacingY = 100;
 
+    // Fetch the Main Display's working area
     RECT workArea;
     SystemParametersInfo(SPI_GETWORKAREA, 0, &workArea, 0);
 
-    int startX = workArea.left + 20;
-    int startY = workArea.top + 20;
+    // FIX: Get the coordinates of the absolute top-left edge of your multi-monitor layout.
+    // If your main display is on the right, virtualXOffset will be negative (e.g. -1920).
+    int virtualXOffset = GetSystemMetrics(SM_XVIRTUALSCREEN);
+    int virtualYOffset = GetSystemMetrics(SM_YVIRTUALSCREEN);
+
+    // Subtracting a negative offset shifts our coordinates forward onto the main screen layout.
+    int startX = workArea.left - virtualXOffset + 20;
+    int startY = workArea.top - virtualYOffset + 20;
+
     int currentX = startX;
     int currentY = startY;
+    int boundaryBottom = workArea.bottom - virtualYOffset;
 
     std::vector<LPCITEMIDLIST> pidlList;
     std::vector<POINT> pointList;
@@ -185,15 +194,15 @@ int main() {
         pointList.push_back(pt);
 
         currentY += iconSpacingY;
-        // Wrap around to the next column if we reach the bottom of the monitor workspace
-        if (currentY + iconSpacingY > workArea.bottom) {
+        // Wrap around to the next column if we reach the bottom of the main monitor workspace
+        if (currentY + iconSpacingY > boundaryBottom) {
             currentY = startY;
             currentX += iconSpacingX;
         }
     }
 
     // Commit the calculated arrangements back to the Desktop Shell View
-    std::wcout << L"Arranging " << items.size() << L" items on your desktop..." << std::endl;
+    std::wcout << L"Arranging " << items.size() << L" items on your main display..." << std::endl;
     pFV->SelectAndPositionItems((UINT)pidlList.size(), pidlList.data(), pointList.data(), SVSI_POSITIONITEM);
 
     // Memory clean up
@@ -204,6 +213,6 @@ int main() {
     pFV->Release();
     CoUninitialize();
 
-    std::wcout << L"Desktop icons sorted successfully!" << std::endl;
+    std::wcout << L"Desktop icons sorted successfully on Main Display!" << std::endl;
     return 0;
 }
