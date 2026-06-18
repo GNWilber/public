@@ -1,133 +1,113 @@
-Oto rozwiązania poszczególnych zadań z arkusza egzaminacyjnego:
+Oto rozwiązania wszystkich zadań z przedstawionego arkusza egzaminacyjnego:
 
 ---
 
-### **Zadanie 1**
-**Treść:**
-*Ile jest numerów rejestracji długości 6, w których mogą pojawić się litery $A, B, C$ i cyfry $1, 2, 3, 4, 5, 6, 7$ i w których (niekoniecznie różne) litery i (niekoniecznie różne) cyfry stoją na przemian?*
+### **Szczegółowa analiza zadań:**
 
-**Rozwiązanie:**
-Mamy zestaw liter $L = \{A, B, C\}$ o liczności $|L| = 3$ oraz zestaw cyfr $D = \{1, 2, 3, 4, 5, 6, 7\}$ o liczności $|D| = 7$.
-Rejestracja ma długość 6. Ponieważ litery i cyfry stoją na przemian, istnieją dwa możliwe, rozłączne wzorce układu znaków:
-1. **Litera, Cyfra, Litera, Cyfra, Litera, Cyfra (L D L D L D)**
-   Liczba takich numerów wynosi:
-   $$|L| \times |D| \times |L| \times |D| \times |L| \times |D| = 3^3 \times 7^3 = 27 \times 343 = 9261$$
+1. **Rozważmy układ równań różniczkowych $\frac{du}{dt} = Au$. Ile wynoszą wartości własne macierzy $A$, gdy $A = [2]$**
+   * **Wyjaśnienie:** Dla macierzy o wymiarze $1 \times 1$ jedyną wartością własną jest jej jedyny element. W tym przypadku jest to 2.
+   * **Poprawna odpowiedź:** **D** (2)
 
-2. **Cyfra, Litera, Cyfra, Litera, Cyfra, Litera (D L D L D L)**
-   Liczba takich numerów wynosi:
-   $$|D| \times |L| \times |D| \times |L| \times |D| \times |L| = 7^3 \times 3^3 = 343 \times 27 = 9261$$
+2. **Czy określenie Design Thinking dotyczy:**
+   * **Wyjaśnienie:** Design Thinking to nowoczesna, ustrukturyzowana metoda projektowania zorientowana na użytkownika, oparta m.in. na głębokim zrozumieniu jego potrzeb (empatyzacji).
+   * **Poprawna odpowiedź:** **B** (Nowoczesnej i efektywnej metodzie projektowania opartej m.in. na empatyzacji?)
 
-Suma obu możliwości daje całkowitą liczbę numerów rejestracyjnych:
-$$9261 + 9261 = \mathbf{18522}$$
+3. **W modelach NNARX:**
+   * **Wyjaśnienie:** Model NNARX (Neural Network AutoRegressive with eXogenous input) wykorzystuje opóźnione sygnały wejściowe (pobudzenia) oraz opóźnione sygnały wyjściowe z obiektu do predykcji kolejnych wartości.
+   * **Poprawna odpowiedź:** **A** (wykorzystywane są opóźnione wartości wejścia pobudzenia i wyjścia obiektu)
 
----
+4. **Do modelowania nieliniowych obiektów dynamicznych:**
+   * **Wyjaśnienie:** Modele NNFIR (Neural Network Finite Impulse Response) są jedną z uznanych klas modeli sieciowych służących do reprezentacji nieliniowych układów dynamicznych. Pozostałe opcje (B i C) błędnie twierdzą, że modele NNARX nie są stosowane.
+   * **Poprawna odpowiedź:** **A** (można zastosować modele NNFIR)
 
-### **Zadanie 2**
-**Treść:**
-*Na ile sposobów można rozmieścić 4 nierozróżnialne białe kule i 2 nierozróżnialne czarne kule w 4 szufladach?*
+5. **Jeśli obiekt jest stabilny, to układ regulacji:**
+   * **Wyjaśnienie:** Nawet jeśli sam obiekt sterowania (układ otwarty) jest stabilny, wprowadzenie sprzężenia zwrotnego (zamknięcie pętli) może doprowadzić do niestabilności całego układu regulacji (np. przy zbyt dużym wzmocnieniu).
+   * **Poprawna odpowiedź:** **A** (może być niestabilny)
 
-**Rozwiązanie:**
-Rozmieszczenie kul białych i czarnych przebiega niezależnie. Ponieważ kule w obrębie danego koloru są nierozróżnialne, a szuflady są rozróżnialne, stosujemy kombinacje z powtórzeniami (model "gwiazdek i kresek"), gdzie liczba sposobów rozmieszczenia $k$ obiektów w $n$ szufladach wynosi $\binom{k+n-1}{k}$:
+6. **Otwarty układ sterowania obiektem wymaga:**
+   * **Wyjaśnienie:** Sterowanie w układzie otwartym polega na podawaniu sygnału sterującego bez sprzężenia zwrotnego na podstawie z góry określonej relacji lub sekwencji działania – czyli opracowanego "przepisu" na sterowanie.
+   * **Poprawna odpowiedź:** **C** (opracowania "przepisu" na sterowanie)
 
-1. Rozmieszczenie 4 białych kul ($k_w = 4$) w 4 szufladach ($n = 4$):
-   $$W = \binom{4+4-1}{4} = \binom{7}{4} = 35$$
+7. **Jakie systemy automatyki budynkowej mogą być zainstalowane w inteligentnym budynku:**
+   * **Wyjaśnienie:** SSWiN (system sygnalizacji włamania), CCTV (telewizja dozorowa), SSP (system sygnalizacji pożarowej), SKD (kontrola dostępu), DSO (dźwiękowy system ostrzegawczy), AV (audio-video) oraz HVAC (ogrzewanie, wentylacja, klimatyzacja) to standardowe i powszechnie stosowane instalacje automatyki budynkowej (BMS).
+   * **Poprawna odpowiedź:** **A** (Systemy SSWiN, CCTV, SSP, SKD, DSO, AV, HVAC?)
 
-2. Rozmieszczenie 2 czarnych kul ($k_b = 2$) w 4 szufladach ($n = 4$):
-   $$B = \binom{2+4-1}{2} = \binom{5}{2} = 10$$
+8. **Należy wskazać poprawną definicję inteligentnego budynku:**
+   * **Wyjaśnienie:** Definicja ta ujmuje holistyczne podejście do inteligentnego budynku jako struktury elastycznej, optymalizującej koszty eksploatacji i dostosowującej się do zmieniających się potrzeb użytkowników.
+   * **Poprawna odpowiedź:** **D** (Budynek inteligentny maksymalizuje efektywność osób go wykorzystujących...)
 
-Całkowita liczba sposobów wynosi:
-$$W \times B = 35 \times 10 = \mathbf{350}$$
+9. **Wielowarstwowe perceptrony:**
+   * **Wyjaśnienie:** Wielowarstwowy perceptron (MLP) z definicji posiada wejściową strukturę warstwową zawierającą co najmniej jedną warstwę ukrytą (hidden layer).
+   * **Poprawna odpowiedź:** **A** (mają co najmniej jedną warstwę ukrytą)
 
----
+10. **Rozważmy układ równań różniczkowych $\frac{du}{dt} = Au$. Ile wynoszą wartości własne macierzy $A$, gdy $A = \begin{bmatrix} 10 & 2 \\ 6 & 6 \end{bmatrix}$**
+    * **Wyjaśnienie:** Równanie charakterystyczne: 
+      $$\det(A - \lambda I) = (10 - \lambda)(6 - \lambda) - 12 = \lambda^2 - 16\lambda + 48 = 0$$
+      Miejsca zerowe tego równania to $\lambda_1 = 12$ oraz $\lambda_2 = 4$.
+    * **Poprawna odpowiedź:** **A** (12 oraz 4)
 
-### **Zadanie 3**
-**Treść:**
-*Ile jest pięciocyfrowych liczb o cyfrach ze zbioru $\{3, 4, 5, 6, 7, 8\}$, w których dokładnie dwie cyfry się powtarzają?*
+11. **Rozważmy układ równań różniczkowych $\frac{du}{dt} = Au$. Ile wynoszą wartości własne macierzy $A$, gdy $A = \begin{bmatrix} 1 & 2 \\ 1 & 2 \end{bmatrix}$**
+    * **Wyjaśnienie:** Równanie charakterystyczne:
+      $$\det(A - \lambda I) = (1 - \lambda)(2 - \lambda) - 2 = \lambda^2 - 3\lambda = 0$$
+      Rozwiązania to $\lambda_1 = 0$ oraz $\lambda_2 = 3$.
+    * **Poprawna odpowiedź:** **D** (0 oraz (3))
 
-**Rozwiązanie:**
-Sformułowanie „dokładnie dwie cyfry się powtarzają” można zinterpretować na dwa sposoby:
+12. **W sterowaniu predykcyjnym:**
+    * **Wyjaśnienie:** Modelowe sterowanie predykcyjne (MPC) pozwala na wykorzystanie nieliniowych modeli obiektów, w tym modeli opartych na sztucznych sieciach neuronowych (NMPC).
+    * **Poprawna odpowiedź:** **A** (można wykorzystać modele neuronowe nieliniowych obiektów dynamicznych)
 
-* **Interpretacja A (jedna cyfra występuje dokładnie dwukrotnie, a pozostałe trzy są różne):**
-  W liczbie występuje dokładnie jedna para takich samych cyfr (np. $\{a, a, b, c, d\}$).
-  1. Wybór cyfry, która ma się powtórzyć (dwukrotnej): $\binom{6}{1} = 6$ sposobów.
-  2. Wybór 3 pozostałych (różnych) cyfr ze zbioru: $\binom{5}{3} = 10$ sposobów.
-  3. Liczba permutacji z powtórzeniami takich 5 cyfr: $\frac{5!}{2!} = 60$.
-  
-  Liczba takich liczb wynosi:
-  $$6 \times 10 \times 60 = \mathbf{3600}$$
+13. **Otwarty układ sterowania obiektem zazwyczaj jest:**
+    * **Wyjaśnienie:** Brak sprzężenia zwrotnego powoduje, że układ otwarty nie eliminuje zakłóceń, co czyni go niedokładnym. Jednocześnie brak zamkniętej pętli sprawia, że nie występuje ryzyko niestabilności spowodowane samym sprzężeniem zwrotnym (jeśli sam obiekt jest stabilny).
+    * **Poprawna odpowiedź:** **C** (niedokładny ale stabilny)
 
-* **Interpretacja B (dokładnie dwie różne wartości cyfr powtarzają się w zapisie liczby):**
-  W liczbie występują dokładnie dwie cyfry mające krotność $\ge 2$. Dla długości 5 możliwe są dwa układy:
-  1. Układ typu $\{a, a, b, b, c\}$ (dwie pary i jedna pojedyncza cyfra):
-     * Wybór 2 cyfr dwukrotnych: $\binom{6}{2} = 15$
-     * Wybór 1 cyfry pojedynczej: $\binom{4}{1} = 4$
-     * Liczba permutacji: $\frac{5!}{2!2!} = 30$
-     * Razem: $15 \times 4 \times 30 = 1800$
-  2. Układ typu $\{a, a, a, b, b\}$ (jedna potrójna i jedna podwójna):
-     * Wybór cyfry potrójnej: $\binom{6}{1} = 6$
-     * Wybór cyfry podwójnej: $\binom{5}{1} = 5$
-     * Liczba permutacji: $\frac{5!}{3!2!} = 10$
-     * Razem: $6 \times 5 \times 10 = 300$
-     
-  Suma dla tej interpretacji wynosi:
-  $$1800 + 300 = \mathbf{2100}$$
+14. **Czy inżynier jako twórca projektów powinien:**
+    * **Wyjaśnienie:** Nowoczesna rola inżyniera-projektanta wymaga pełnej świadomości metodyki projektowania (założenia, wymagania) oraz formalnej i autorskiej odpowiedzialności za tworzony system.
+    * **Poprawna odpowiedź:** **C** (Znać zasady tworzenia założeń projektowych, specyfikacji wymagań oraz rozumieć znaczenie autorskiej odpowiedzialności za projekt?)
 
----
+15. **Do transformacji punktowych nie należy:**
+    * **Wyjaśnienie:** Progowanie i korekcja gamma to klasyczne operacje punktowe, gdzie nowa wartość piksela zależy wyłącznie od jego dotychczasowej wartości. Wyrównywanie histogramu kolorów wymaga analizy rozkładu jasności/barw w całym obrazie (jest to operacja globalna/wielokanałowa), dlatego nie zalicza się go do prostych transformacji punktowych.
+    * **Poprawna odpowiedź:** **A** (wyrównywanie histogramu kolorów)
 
-### **Zadanie 4**
-**Treść:**
-*25-krawędziowy graf prosty posiada 3 wierzchołki stopnia 4, 4 stopnia 5 oraz wierzchołki stopnia 6. Podać ciąg stopni wierzchołków dopełnienia tego grafu.*
+16. **Sterowanie w zamkniętym układzie sterowania obiektem zazwyczaj jest:**
+    * **Wyjaśnienie:** Sprzężenie zwrotne w układzie zamkniętym zapewnia wysoką dokładność regulacji i kompensację zakłóceń, lecz niewłaściwy dobór parametrów pętli sprzężenia zwrotnego może doprowadzić do niestabilności.
+    * **Poprawna odpowiedź:** **B** (dokładne, ale może być niestabilne)
 
-**Rozwiązanie:**
-Niech $n$ oznacza łączną liczbę wierzchołków w grafie $G$. Z twierdzenia o uściskach dłoni wiemy, że suma stopni wierzchołków jest równa podwojonej liczbie krawędzi ($2 \times 25 = 50$):
-$$3 \times 4 + 4 \times 5 + (n - 7) \times 6 = 50$$
-$$12 + 20 + 6n - 42 = 50$$
-$$6n - 10 = 50 \implies 6n = 60 \implies n = 10$$
+17. **Rozważmy układ równań różniczkowych $\frac{du}{dt} = Au$. Ile wynoszą wartości własne macierzy $A$, gdy $A = \begin{bmatrix} 5 & 1 \\ 3 & 3 \end{bmatrix}$**
+    * **Wyjaśnienie:** Równanie charakterystyczne:
+      $$\det(A - \lambda I) = (5 - \lambda)(3 - \lambda) - 3 = \lambda^2 - 8\lambda + 12 = 0$$
+      Rozwiązaniami są $\lambda_1 = 6$ oraz $\lambda_2 = 2$.
+    * **Poprawna odpowiedź:** **C** (6 oraz 2)
 
-Graf $G$ o 10 wierzchołkach ma:
-- 3 wierzchołki o stopniu 4,
-- 4 wierzchołki o stopniu 5,
-- 3 wierzchołki o stopniu 6 ($10 - 7 = 3$).
+18. **Histogramy brzegowe są stosowane:**
+    * **Wyjaśnienie:** Rzuty histogramów (profilów projekcji) na osie poziome i pionowe (histogramy brzegowe) są powszechnie stosowane w cyfrowym przetwarzaniu obrazów m.in. do wstępnej lokalizacji obiektów (np. tablic rejestracyjnych, znaków, linii tekstu).
+    * **Poprawna odpowiedź:** **C** (do lokalizowania obiektów na obrazach)
 
-Stopień wierzchołka $v$ w grafie dopełnienia $\bar{G}$ oblicza się jako $\operatorname{deg}_{\bar{G}}(v) = n - 1 - \operatorname{deg}_G(v) = 9 - \operatorname{deg}_G(v)$:
-- Dla wierzchołków stopnia 4 w $G$: $9 - 4 = 5$ (3 wierzchołki),
-- Dla wierzchołków stopnia 5 w $G$: $9 - 5 = 4$ (4 wierzchołki),
-- Dla wierzchołków stopnia 6 w $G$: $9 - 6 = 3$ (3 wierzchołki).
-
-Uporządkowany nierosnąco ciąg stopni wierzchołków dopełnienia wynosi:
-$$\mathbf{(5, 5, 5, 4, 4, 4, 4, 3, 3, 3)}$$
+19. **Rozważmy układ równań różniczkowych $\frac{du}{dt} = Au$. Ile wynoszą wartości własne macierzy $A$, gdy $A = \begin{bmatrix} -1 & 2 \\ 1 & -2 \end{bmatrix}$**
+    * **Wyjaśnienie:** Równanie charakterystyczne:
+      $$\det(A - \lambda I) = (-1 - \lambda)(-2 - \lambda) - 2 = \lambda^2 + 3\lambda = 0$$
+      Rozwiązania to $\lambda_1 = 0$ oraz $\lambda_2 = -3$.
+    * **Poprawna odpowiedź:** **D** (0 oraz (-3))
 
 ---
 
-### **Zadanie 5**
-**Treść:**
-*Graf $G$ jest rozłączną sumą grafów $K_{10}$ i $K_{8,8}$ (tj. posiada dwie składowe spójne izomorficzne z tymi grafami). Podać liczbę krawędzi dopełnienia grafu $G$.*
+### **Lista samych odpowiedzi:**
 
-**Rozwiązanie:**
-Graf $G$ składa się z dwóch składowych: $G_1 = K_{10}$ oraz $G_2 = K_{8,8}$.
-1. Liczba wierzchołków grafu $G$:
-   $$N = 10 + (8 + 8) = 26$$
-
-2. Liczba krawędzi w grafie $G$ to suma krawędzi składowych:
-   - W grafie pełnym $K_{10}$: $e_1 = \binom{10}{2} = 45$
-   - W pełnym grafie dwudzielnym $K_{8,8}$: $e_2 = 8 \times 8 = 64$
-   - Łącznie: $E_G = 45 + 64 = 109$
-
-3. Liczba krawędzi w dopełnieniu grafu $\bar{G}$ o $N = 26$ wierzchołkach:
-   $$E_{\bar{G}} = \binom{26}{2} - E_G = \frac{26 \times 25}{2} - 109 = 325 - 109 = \mathbf{216}$$
-
----
-
-### **Zadanie 6**
-**Treść:**
-*Połączmy wybrane wierzchołki dwóch grafów pełnych $K_6$ i $K_7$ krawędzią. Ile drzew spinających ma otrzymany w ten sposób graf?*
-
-**Rozwiązanie:**
-Dodana krawędź $e$ łącząca podgrafy $K_6$ i $K_7$ stanowi most (cut-edge) w otrzymanym grafie $G$. Każde drzewo spinające grafu $G$ musi obowiązkowo zawierać tę krawędź, aby zachować spójność. 
-
-Stąd liczba drzew spinających grafu $G$ jest iloczynem liczby drzew spinających każdej ze składowych. Korzystając z wzoru Cayleya ($n^{n-2}$):
-- Liczba drzew spinających dla $K_6$: $T(K_6) = 6^{6-2} = 6^4 = 1296$
-- Liczba drzew spinających dla $K_7$: $T(K_7) = 7^{7-2} = 7^5 = 16807$
-
-Całkowita liczba drzew spinających wynosi:
-$$T(G) = 1296 \times 16807 = \mathbf{21781872}$$
+1. **D**
+2. **B**
+3. **A**
+4. **A**
+5. **A**
+6. **C**
+7. **A**
+8. **D**
+9. **A**
+10. **A**
+11. **D**
+12. **A**
+13. **C**
+14. **C**
+15. **A**
+16. **B**
+17. **C**
+18. **C**
+19. **D**
